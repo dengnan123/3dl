@@ -1,0 +1,94 @@
+@import '../../../themes/table.less';
+
+.listContent {
+  width: 100%;
+  overflow: hidden;
+}
+
+.table {
+  :global {
+    .ant-upload-list.ant-upload-list-text {
+      display: none;
+    }
+    .ant-table .ant-table-content .ant-table-body .ant-table-tbody > tr > td {
+      height: 80px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+/// Table
+.tableLastColumn {
+  width: 230px;
+  button {
+    height: 18px;
+    padding: 0;
+    line-height: 18px;
+  }
+}
+
+.defaultClass {
+  display: inline-block;
+  height: auto;
+  padding: 0 7px;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  color: #f5222d;
+  border: 1px solid #ffa39e;
+  background: #fff1f0;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.defaultClass.runningTag {
+  color: #52c41a;
+  background: #f6ffed;
+  border-color: #b7eb8f;
+}
+
+// Modal
+.modalMain {
+  width: 700px !important;
+  padding: 0 !important;
+  :global {
+    .ant-modal-body {
+      min-height: 400px;
+      max-height: 580px;
+      padding: 0;
+      overflow: hidden;
+    }
+    .ant-modal-header {
+      height: 62px;
+      background-color: #ededee;
+    }
+    .ant-modal-title {
+      margin: 0;
+      color: #424242;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 30px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+    .ant-modal-close-x {
+      display: block;
+      width: 62px;
+      height: 62px;
+      font-size: 24px;
+      font-style: normal;
+      line-height: 62px;
+      text-align: center;
+      text-transform: none;
+      text-rendering: auto;
+    }
+
+    .ant-modal-footer {
+      height: 62px;
+      line-height: 42px;
+      background: #f7f8fa;
+    }
+  }
+}

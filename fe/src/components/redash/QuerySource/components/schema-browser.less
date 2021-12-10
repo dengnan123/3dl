@@ -1,0 +1,96 @@
+:global {
+  div.table-name {
+    position: relative;
+    padding: 2px 22px 2px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 3px;
+    cursor: pointer;
+
+    .copy-to-editor {
+      display: none;
+    }
+
+    &:hover {
+      background: fade(rgba(102, 136, 153, 1), 10%);
+
+      .copy-to-editor {
+        display: flex;
+      }
+    }
+  }
+
+  .schema-container {
+    z-index: 10;
+    height: 100%;
+    background-color: white;
+  }
+
+  .schema-browser {
+    position: relative;
+    height: 100%;
+    margin-top: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: none;
+
+    div {
+      font-size: 12px !important;
+    }
+    span {
+      font-size: 12px !important;
+    }
+
+    .collapse.in {
+      background: transparent;
+    }
+
+    .copy-to-editor {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      color: fade(rgba(102, 136, 153, 1), 90%);
+      cursor: pointer;
+    }
+
+    .table-open {
+      position: relative;
+      padding: 0 22px 0 26px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      .copy-to-editor {
+        display: none;
+      }
+
+      &:hover {
+        background: fade(rgba(102, 136, 153, 1), 10%);
+
+        .copy-to-editor {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  .schema-control {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+
+    .ant-btn {
+      height: auto;
+    }
+  }
+
+  .parameter-label {
+    display: block;
+  }
+}

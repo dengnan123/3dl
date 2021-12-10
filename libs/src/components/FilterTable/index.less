@@ -1,0 +1,125 @@
+.filterTable {
+  background-color: #fff;
+  overflow: auto;
+  :global {
+    .ant-table-thead > tr > th {
+      text-align: left;
+      // white-space: nowrap;
+    }
+    // .ant-table-thead > tr:first-child > th {
+    //   background-color: rgba(25, 145, 235, 0.1);
+    //   .ant-table-column-title {
+    //     color: #1991eb;
+    //   }
+    // }
+    .ant-table-thead > tr:first-child > th[rowspan] {
+      background-color: #fff;
+    }
+    .ant-table-thead > tr:nth-child(even) th {
+      background-color: #fff;
+      .ant-input,
+      .ant-input-number,
+      .ant-select-selection {
+        border: 0;
+        // background-color: #fcfcfc;
+      }
+      .ant-input:focus,
+      .ant-select-focused .ant-select-selection,
+      .ant-select-selection:focus,
+      .ant-select-selection:active {
+        box-shadow: none;
+      }
+      .ant-input-number-handler-wrap {
+        display: none;
+      }
+    }
+
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td {
+      white-space: nowrap;
+      padding: 10px 8px !important;
+      height: 50px;
+    }
+    // 筛选行设置无边框
+    .ant-table-thead > tr:nth-child(2) th {
+      padding: 0 !important;
+    }
+    .ant-table-tbody > tr > td {
+      line-height: 32px;
+    }
+    .ant-table-tbody > tr > td:last-child .ant-btn:first-child {
+      padding-left: 0;
+    }
+    .ant-pagination-total-text {
+      margin-right: 16px;
+    }
+    //斑马线
+    // .ant-table-thead > tr,
+    // .ant-table-tbody > tr:nth-child(even) {
+    //   background-color: #f7f7f7;
+    // }
+    .ant-table-thead > tr > th .ant-table-header-column {
+      width: 100%;
+      .ant-table-column-sorters {
+        display: flex;
+        align-items: center;
+        .ant-table-thead > tr > th .ant-table-column-sorter .ant-table-column-sorter-inner {
+          margin-top: 0 !important;
+        }
+        .ant-table-column-title {
+          flex: 1;
+        }
+      }
+    }
+    //
+    .ant-table-thead .ant-table-selection-column {
+      text-align: center;
+    }
+    .ant-table-pagination.ant-pagination {
+      margin-right: 16px;
+      white-space: nowrap;
+    }
+    .ant-table-column-title .ant-divider-horizontal {
+      margin: 16px -16px;
+    }
+
+    // 设置thead里常用组件默认宽度
+    .ant-table-header-column {
+      .ant-select,
+      .ant-input,
+      .ant-calendar-picker {
+        width: 100%;
+        // min-width: 100px;
+      }
+    }
+    // 设置input.search组件默认预留清空图标位置，消除撑大父元素宽度问题
+    .ant-table-column-title .ant-input-affix-wrapper .ant-input:not(:last-child) {
+      padding-right: 49px;
+    }
+    // 设置固定列的z-index
+    .ant-table-fixed-left,
+    .ant-table-fixed-right {
+      z-index: 2;
+    }
+  }
+}
+
+.activeClass {
+  background: #e2eaf4 !important;
+}
+
+.range {
+  :global {
+    .ant-calendar-range-picker-input {
+      width: 38%;
+      text-overflow: ellipsis;
+    }
+  }
+  @media (max-width: 1600px) {
+    :global {
+      .ant-calendar-range-picker-input {
+        width: 27%;
+      }
+    }
+  }
+}

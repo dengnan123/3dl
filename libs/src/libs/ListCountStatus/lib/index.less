@@ -1,0 +1,96 @@
+.container {
+  width: 100%;
+  height: 100%;
+
+  .list {
+    width: 100%;
+  }
+}
+
+.list .item {
+  position: relative;
+  width: 100%;
+  // padding: 5px 15px;
+  box-sizing: border-box;
+}
+
+.item .label {
+  float: left;
+  height: 100%;
+}
+
+.item .value {
+  float: left;
+  height: 100%;
+  > span {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+  }
+}
+
+.item .icon {
+  float: left;
+  height: 100%;
+}
+
+.numberList {
+  display: block;
+  width: 100%;
+  height: 100%;
+  label {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.numberList.numbers-scroll0 {
+  animation: scrollNumber0 0.4s ease-in-out 1 normal;
+}
+.numberList.numbers-scroll1 {
+  animation: scrollNumberNormal 0.1s ease-in-out 1 normal;
+}
+.numberList.numbers-scroll2 {
+  animation: scrollNumberNormal 0.2s ease-in-out 1 normal;
+}
+.numberList.numbers-scroll3 {
+  animation: scrollNumberNormal 0.3s ease-in-out 1 normal;
+}
+.numberList.numbers-scroll4 {
+  animation: scrollNumberNormal 0.4s ease-in-out 1 normal;
+}
+.numberList.numbers-scroll5 {
+  animation: scrollNumberNormal 0.5s ease-in-out 1 normal;
+}
+.numberList.numbers-scroll6 {
+  animation: scrollNumberNormal 0.6s ease-in-out 1 normal;
+}
+.numberList.numbers-scroll7 {
+  animation: scrollNumberNormal 0.7s ease-in-out 1 normal;
+}
+.numberList.numbers-scroll8 {
+  animation: scrollNumberNormal 0.8s ease-in-out 1 normal;
+}
+.numberList.numbers-scroll9 {
+  animation: scrollNumberNormal 0.8s ease-in-out 1 normal;
+}
+
+@keyframes scrollNumber0 {
+  0% {
+    transform: translateY(-205px);
+  }
+  100% {
+    // transform: translateY(0);
+  }
+}
+
+@keyframes scrollNumberNormal {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    // transform: translateY(-405px);
+  }
+}

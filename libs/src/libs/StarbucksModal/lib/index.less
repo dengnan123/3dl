@@ -1,0 +1,171 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.modaleWrapper {
+  padding: 0;
+  :global {
+    .ant-modal-content {
+      box-shadow: none;
+      background-color: transparent;
+    }
+    .ant-modal-body {
+      padding: 0;
+    }
+  }
+  .modalContainer {
+    position: relative;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    h2 {
+      margin: 0;
+      padding-top: 44px;
+      // padding-bottom: 10px;
+      text-align: center;
+      font-size: 18px;
+      color: #ffffff;
+      i {
+        margin-right: 10px;
+        color: #649e8b;
+      }
+    }
+
+    .closeIcon {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      width: 30px;
+      height: 30px;
+      padding: 5px;
+    }
+  }
+}
+
+// 预订部分样式
+.formContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 240px;
+  margin: 0 auto;
+}
+
+.content {
+  width: 100%;
+  > p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #ffffff;
+    > span {
+      font-weight: bold;
+    }
+  }
+  > p:first-child {
+    padding-bottom: 22px;
+  }
+  > p.timeTips {
+    font-size: 12px;
+  }
+}
+
+.verifyContent {
+  width: 100%;
+  padding-top: 22px;
+  > p {
+    margin: 0;
+    color: #ffffff;
+  }
+  > p:first-child {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  .mobileDiv {
+    position: relative;
+    width: 100%;
+    height: auto;
+    .numberInput {
+      width: 100%;
+      height: 32px;
+      padding-left: 15px;
+      padding-right: 70px;
+      border-radius: 30px;
+      background-color: #d4e9e3;
+      border-color: #d4e9e3;
+      color: #22292f;
+      font-size: 14px;
+    }
+    .numberInput.inputError {
+      background-color: #f9f9f9;
+      border-color: #fe3a00;
+    }
+    .submitBtn {
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 63px;
+      height: 28px;
+      padding: 0;
+      border: none;
+      border-radius: 28px;
+      text-align: center;
+      line-height: 28px;
+      font-size: 12px;
+      color: #f9f9f9;
+      background-color: #00754a;
+      box-shadow: none;
+    }
+  }
+
+  .errorTips {
+    height: 36px;
+    margin-top: 2px;
+    font-size: 12px;
+    > i {
+      margin-right: 5px;
+    }
+  }
+}
+
+// 预定成功样式
+.successContent {
+  margin: 0 auto;
+  padding-top: 50px;
+  > p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #ffffff;
+    > span {
+      font-weight: bold;
+    }
+  }
+  > p:first-child {
+    padding-bottom: 22px;
+  }
+  > p.successTips {
+    // margin-top: 5px;
+    font-size: 12px;
+    > i {
+      margin-right: 5px;
+    }
+  }
+}
+
+.closeContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #00754a;
+  text-align: center;
+  font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
+  span {
+    font-size: 12px;
+  }
+}

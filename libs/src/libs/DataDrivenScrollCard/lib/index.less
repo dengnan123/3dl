@@ -1,0 +1,109 @@
+.container {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.rightContent {
+  flex: 1;
+  text-align: start;
+}
+
+.card {
+  width: 1140px;
+  height: 384px;
+  padding: 30px;
+  background-color: rgba(0, 3, 12, 0.36);
+  box-shadow: 0px 0px 24px 3px rgba(224, 32, 32, 0.05);
+  border-radius: 39px;
+  display: flex;
+  position: relative;
+  margin-right: 42px;
+  img {
+    width: 480px;
+    height: 324px;
+    background-image: linear-gradient(90deg);
+    border-radius: 30px;
+    opacity: 0.7;
+    margin-right: 42px;
+  }
+  .cardTitle {
+    height: 60px;
+    max-width: 500px;
+    font-family: PingFangSC-Medium;
+    font-size: 42px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 60px;
+    letter-spacing: 0px;
+    color: #efefef;
+    margin-bottom: 38px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .cardContent {
+    margin-top: 24px;
+    > div {
+      margin-top: 7px;
+      margin-bottom: 7px;
+      max-width: 500px;
+      height: 42px;
+      font-family: PingFangSC-Regular;
+      font-size: 30px;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0px;
+      color: #cccccc;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      &:nth-child(2) {
+        margin-bottom: 19px;
+      }
+      .progress {
+        position: absolute;
+        top: 191px;
+        margin-left: 24px;
+        align-self: center;
+        width: 348px;
+        :global {
+          .ant-progress-inner {
+            background-color: #232836 !important;
+          }
+        }
+      }
+    }
+  }
+  .percent {
+    position: absolute;
+    top: 177px;
+    right: 30px;
+    width: 66px;
+    height: 42px;
+    font-family: PingFangSC-Regular;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+  }
+  .state {
+    position: absolute;
+    top: 37px;
+    right: 30px;
+    width: 60px;
+    height: 42px;
+    font-family: PingFangSC-Regular;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+  }
+  .normalState {
+    color: #efefef;
+  }
+  .abnormalState {
+    color: #ff4b42;
+  }
+}

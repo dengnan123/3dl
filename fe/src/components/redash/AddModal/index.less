@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  min-height: 800px;
+  .leftContainer {
+    height: 800px;
+    display: flex;
+    > div {
+      width: 350px;
+      padding-right: 20px;
+    }
+  }
+  .left {
+    width: 350px;
+  }
+  .right {
+    flex-grow: 1;
+    padding-left: 20px;
+    border-left: 1px solid #e9e9e9;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+// ===========字段映射
+.fieldsContent {
+  width: 100%;
+  padding: 0 20px;
+  > div {
+    margin-bottom: 10px;
+  }
+  > div > span:first-child {
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+
+  .top {
+    margin-bottom: 30px;
+
+    .search {
+      width: 400px;
+      margin-right: 30px;
+    }
+
+    .add {
+      float: right;
+    }
+
+    .selectBox {
+      margin-top: 10px;
+
+      :global {
+        .ant-select {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .total {
+    width: 100%;
+    display: block;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    span {
+      color: #1991eb;
+    }
+  }
+
+  .btn {
+    padding-left: 0;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

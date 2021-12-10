@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transition: transform 300ms linear;
+  will-change: transform;
+  ul {
+    position: absolute;
+    top: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition-duration: 0ms;
+    transition: transform 300ms linear;
+    will-change: transform;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 50px;
+    line-height: 50px;
+  }
+}

@@ -1,0 +1,76 @@
+.hiddenFooterTopLine {
+  :global {
+    .ant-modal-footer {
+      border-top: 0px !important;
+    }
+  }
+}
+
+.hiddenCloseX {
+  :global {
+    .ant-modal-close-x {
+      display: none !important;
+    }
+  }
+}
+
+.modalBodyBottom {
+  :global {
+    .ant-modal-body {
+      margin-bottom: 40px;
+    }
+    .ant-modal-content {
+      height: 390px;
+      border-radius: 20px;
+
+      .ant-modal-footer {
+        position: absolute;
+        bottom: 60px;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        span {
+          font-size: 30px;
+        }
+      }
+      .ant-modal-body {
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        font-size: 36px;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 0 30px;
+}
+
+.promptRenderFooter {
+  display: flex;
+  justify-content: center;
+  > button {
+    width: 690px;
+    height: 74px;
+  }
+}
+
+.submitRenderFooter {
+  display: flex;
+  justify-content: space-around;
+  > button {
+    width: 330px;
+    height: 74px;
+  }
+  button:nth-child(1) {
+    color: #fe643a;
+  }
+  button:nth-child(2) {
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,66 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.img {
+  width: 30px;
+  height: 30px;
+  transition: 0.5s ease;
+  transform: scale(1);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  &.rightImg {
+    margin-left: 20px;
+  }
+  &.leftImg {
+    margin-right: 20px;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+.inner {
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.2s;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.active {
+  transform: scale(1);
+}
+
+.list {
+  width: fit-content;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    width: fit-content;
+    height: 100%;
+    position: relative;
+  }
+}

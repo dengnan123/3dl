@@ -1,0 +1,35 @@
+@import '../../../../themes/table.less';
+
+.table {
+  height: calc(100vh - 160px);
+  overflow-y: auto;
+  :global {
+    .ant-upload-list.ant-upload-list-text {
+      display: none;
+    }
+    .ant-table .ant-table-content .ant-table-body .ant-table-tbody > tr > td {
+      height: 80px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  .image {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    img {
+      width: 100px;
+      height: 60px;
+      object-fit: cover;
+    }
+  }
+  .imgBtn {
+    padding: 0 15px;
+    font-size: 14px;
+    color: @primary-color;
+    cursor: pointer;
+    line-height: 40px;
+  }
+}

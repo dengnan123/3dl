@@ -1,0 +1,40 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+    width: 180px;
+    margin-right: 15px;
+    > div {
+      width: 100%;
+    }
+    > span {
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  > p {
+    margin: 0;
+  }
+  span.name {
+    max-width: 90px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+  }
+  span.required {
+    margin-right: 4px;
+    vertical-align: middle;
+    color: #f5222d;
+  }
+  .icon {
+    i {
+      margin-left: 5px;
+      font-size: 17px;
+    }
+  }
+}

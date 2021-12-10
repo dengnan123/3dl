@@ -1,0 +1,35 @@
+export default  {
+  columns: [
+    { title: '楼层', dataIndex: 'floor', key: 'floor' },
+    { title: '工位数', dataIndex: 'deskNumber', key: 'deskNumber' },
+    { title: '会议室数', dataIndex: 'roomNumber', key: 'roomNumber' },
+    { title: '平均使用率', dataIndex: 'usageRate', key: 'usageRate' },
+  ],
+  dataSource: [
+    [
+      { key: '1', floor: 1, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '2', floor: 2, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '3', floor: 3, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '4', floor: 4, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '5', floor: 5, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '6', floor: 6, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '7', floor: 7, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '8', floor: 8, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '9', floor: 9, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '10', floor: 10, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '11', floor: 11, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '12', floor: 12, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '13', floor: 13, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '14', floor: 14, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '14', floor: 15, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+      { key: '14', floor: 16, deskNumber: '***', roomNumber: '***', usageRate: '10%' },
+    ],
+    [
+      { key: '1', floor: 222, deskNumber: '---', roomNumber: '---', usageRate: '--' },
+      { key: '2', floor: 222, deskNumber: '---', roomNumber: '---', usageRate: '--' },
+      { key: '2', floor: 222, deskNumber: '---', roomNumber: '---', usageRate: '--' },
+      { key: '2', floor: 222, deskNumber: '---', roomNumber: '---', usageRate: '--' },
+      { key: '2', floor: 222, deskNumber: '---', roomNumber: '---', usageRate: '--' },
+    ],
+  ],
+};

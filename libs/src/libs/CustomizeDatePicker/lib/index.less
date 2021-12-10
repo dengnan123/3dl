@@ -1,0 +1,43 @@
+.picker {
+  width: 100% !important;
+
+  > div, > span {
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+  }
+
+  :global {
+    .ant-calendar-picker-container {
+      left: 0 !important;
+      top: -3px !important;
+    }
+
+    .ant-calendar-picker-input.ant-input {
+      color: inherit;
+      border-color: inherit;
+    }
+  }
+
+  &:hover {
+    :global {
+      .ant-calendar-picker-icon {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.transparent {
+  :global {
+    .ant-calendar-picker-clear,
+    .ant-calendar-picker-icon {
+      color: inherit;
+      background-color: inherit;
+    }
+
+    .ant-calendar-picker-input.ant-input {
+      background-color: inherit;
+    }
+  }
+}

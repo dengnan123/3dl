@@ -1,0 +1,104 @@
+# 项目参数（用户可以在gitlab仓库->settings->CI/CD->Variables里定义或覆盖默认值）
+# DF_IMAGE_NAME 镜像名，如果未定义则使用CI_PROJECT_NAME
+# DF_APP_MODULE 应用模块名，主要用于多模块项目指定应用主模块。如果未定义则使用application
+
+# 一般参数（一般在Group Settings里已经设置好，不需要用户设置）
+# DF_DOCKER_REGISTRY_USERNAME 镜像仓库用户名
+# DF_DOCKER_REGISTRY_PASSWORD 镜像仓库密码
+# DF_DOCKER_REGISTRY 镜像仓库地址
+# DF_SNAPSHOT_NAMESPACE_NAME 快照版镜像仓库命名空间名称
+# DF_RELEASE_NAMESPACE_NAME  发布版镜像仓库命名空间名称
+# 以下两个参数是计算出来的，暂时不提供修改
+# DF_DOCKER_REGISTRY_NAMESPACE 镜像仓库命名空间
+# DF_IMAGE_TAG  镜像TAG
+
+# Gitlab Runner参数
+# DF_RUNNER_REGISTRY_NAMESPACE Runner镜像仓库命名空间
+# DF_RUNNER_IMAGE_NAME Runner镜像名
+# DF_RUNNER_IMAGE_TAG  Runner镜像TAG
+# DF_DEPLOY_RUNNER_IMAGE_NAME Runner镜像名
+# DF_DEPLOY_RUNNER_IMAGE_TAG  Runner镜像TAG
+# Docker编译和推送的脚本
+
+variables:
+  DF_APP_NAME: screen-data
+  DF_DEPLOY_PORT: 3000
+  DF_ARTIFACT_PATH: screen-data-dist.tar
+  DF_ARTIFACT_NAME: ${DF_APP_NAME}-${CI_COMMIT_SHA:0:7}
+
+# Runner镜像相关配置
+.bp_build: &bp_build_tpl
+  stage: build
+  tags: [minio]
+  image: ${DF_DOCKER_REGISTRY}/${DF_RUNNER_REGISTRY_NAMESPACE}/${DF_RUNNER_IMAGE_NAME}:${DF_RUNNER_IMAGE_TAG}
+  services:
+    - docker:stable-dind
+  variables:
+    DOCKER_HOST: tcp://localhost:2375
+    DOCKER_TLS_CERTDIR: ''
+  # cache:
+  #   paths:
+  #     - node_modules
+  before_script:
+    - export DF_DOCKER_REGISTRY_NAMESPACE=${DF_SNAPSHOT_NAMESPACE_NAME}
+    - export DF_IMAGE_TAG=${CI_COMMIT_SHA:0:7}
+    - printenv
+    - docker login -u ${DF_DOCKER_REGISTRY_USERNAME} -p ${DF_DOCKER_REGISTRY_PASSWORD} ${DF_DOCKER_REGISTRY}
+    - export appImageTag=${DF_DOCKER_REGISTRY}/${DF_DOCKER_REGISTRY_NAMESPACE}/${DF_IMAGE_NAME:-$CI_PROJECT_NAME}:${DF_IMAGE_TAG}
+  script:
+    - node ./shells/build-preview.js 11283 11287 11296
+    # - tar c -f screen-data-dist.tar screen-data-dist/
+    - docker build -t $appImageTag .
+    - docker push $appImageTag
+
+# Runner镜像相关配置
+.dp_deploy: &dp_deploy_tpl
+  stage: deploy
+  tags: [minio]
+  image: ${DF_DOCKER_REGISTRY}/${DF_RUNNER_REGISTRY_NAMESPACE}/${DF_DEPLOY_RUNNER_IMAGE_NAME}:${DF_DEPLOY_RUNNER_IMAGE_TAG}
+  before_script:
+    - export DF_DOCKER_REGISTRY_NAMESPACE=${DF_SNAPSHOT_NAMESPACE_NAME}
+    - export DF_IMAGE_TAG=${CI_COMMIT_SHA:0:7}
+    - printenv
+    - export DF_IMAGE_NAME=${DF_IMAGE_NAME:-$CI_PROJECT_NAME}
+    - export appImageTag=${DF_DOCKER_REGISTRY}/${DF_DOCKER_REGISTRY_NAMESPACE}/${DF_IMAGE_NAME}:${DF_IMAGE_TAG}
+  script:
+    - export kc="kubectl --server=https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_PORT_443_TCP_PORT --insecure-skip-tls-verify=true --token=$DF_K8S_TOKEN -n$DF_NS_NAME"
+    - echo "$kc"
+    - cat .k8s.deploy.yaml
+    - ( echo "cat <<EOF" ; cat .k8s.deploy.yaml ; ) | sh > k8s-deploy-do-not-duplicate-name.yaml
+    - cat k8s-deploy-do-not-duplicate-name.yaml
+    - $kc apply -f k8s-deploy-do-not-duplicate-name.yaml --record
+
+stages:
+  - build
+  - deploy
+  - deploy_demo
+  # - push_artifact
+
+v2.20_build:
+  <<: *bp_build_tpl
+  only:
+    - feature/dany/master
+  artifacts:
+    name: ${DF_ARTIFACT_NAME}
+    paths:
+      - ${DF_ARTIFACT_PATH}
+
+v2.20_deploy:
+  <<: *dp_deploy_tpl
+  variables:
+    DF_NS_NAME: v220
+    DF_APP_NAME: screen-data
+    FENGMAP_PROD: 'http://3dl.dfocus.top/api/static/fengmap.min.js'
+    FE_ORIGIN: 'http://3dl.dfocus.top'
+    API_HOST_PROD: 'http://3dl.dfocus.top/api'
+    DF_ALLOW_REPLACE_HOST: 'true'
+    # umi config routerBase
+    UMI_ROUTER_BASE: '/'
+    # umi config publicPath, 此处对应nginx配置前缀
+    UMI_PUBLIC_PATH: ''
+  only:
+    - feature/dany/master
+  dependencies:
+    - v2.20_build

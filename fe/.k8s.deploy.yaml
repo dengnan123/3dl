@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${DF_APP_NAME}
+  namespace: ${DF_NS_NAME}
+spec:
+  replicas: ${DF_REPLICAS:-1}
+  strategy:
+    rollingUpdate:
+      maxSurge: ${DF_MAX_SURGE:-1}
+      maxUnavailable: ${DF_MAX_UNAVAILABLE:-0}
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: ${DF_APP_NAME}
+      namespace: ${DF_NS_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${DF_APP_NAME}
+        namespace: ${DF_NS_NAME}
+    spec:
+      containers:
+        - name: ${DF_APP_NAME}
+          image: ${DF_APP_IMAGE:-$appImageTag}
+          resources:
+            requests:
+              cpu: ${DF_REQUEST_CPU:-"50m"}
+              memory: ${DF_REQUEST_MEMORY:-"64Mi"}
+            limits:
+              cpu: ${DF_LIMIT_CPU:-1}
+              memory: ${DF_LIMIT_MEMORY:-"256Mi"}
+          ports:
+            - containerPort: ${DF_DEPLOY_PORT:-3000}
+          env:
+            - name: PORT
+              value: "${FENGMAP_PROD}"
+            - name: FENGMAP_PROD
+              value: "${DF_API_FM_HOST}"
+            - name: FE_ORIGIN
+              value: "${FE_ORIGIN}"
+            - name: API_HOST_PROD
+              value: "${API_HOST_PROD}"
+            - name: UMI_ROUTER_BASE
+              value: "${DF_UMI_ROUTER_BASE}"
+            - name: UMI_PUBLIC_PATH
+              value: "${DF_UMI_PUBLIC_PATH}"
+          readinessProbe:
+            httpGet:
+              port: ${DF_DEPLOY_PORT:-3000}
+              path: ${DF_HEALTH_PATH:-"/healthz"}
+            initialDelaySeconds: ${DF_DELAY_SECS:-30}
+            timeoutSeconds: ${DF_TIMEOUT_SECS:-1}
+            periodSeconds: ${DF_PERIOD_SECS:-10}
+            successThreshold: ${DF_SUCCESS_THRESHOLD:-1}
+            failureThreshold: ${DF_FAILURE_THRESHOLD:-9}

@@ -1,0 +1,117 @@
+@import '../../themes/default.less';
+
+:global(.dark) {
+  .switch {
+    color: @dark-11;
+  }
+  .marginBoth {
+    color: @dark-11;
+  }
+  .select {
+    :global {
+      .ant-select-selection-selected-value {
+        color: #999999 !important;
+      }
+    }
+  }
+  .dropdownContent {
+    :global {
+      .ant-select-dropdown-menu {
+        li.ant-select-dropdown-menu-item-active {
+          background-color: rgba(25, 145, 235, 0.2);
+        }
+        li:hover {
+          background-color: rgba(25, 145, 235, 0.2);
+        }
+      }
+    }
+  }
+}
+.switchBox {
+  position: absolute;
+  top: 60px;
+  right: 90px;
+  margin-left: 30px;
+}
+.switch {
+  cursor: pointer;
+  font-size: 14px;
+  color: #999;
+}
+
+// .select {
+//   font-size: 16px;
+//   color: @black-3;
+//   width: 120px;
+//   > div {
+//     border: 0;
+//   }
+// }
+.marginBoth {
+  margin: 0 10px;
+}
+// Header语言选项框样式
+.select {
+  :global {
+    .ant-select-arrow {
+      right: 1px;
+    }
+    .ant-select-selection {
+      border: 0;
+      min-height: 22px;
+      height: 22px;
+      &:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      .ant-select-selection__rendered {
+        line-height: 22px;
+        .ant-select-selection-selected-value {
+          font-size: 16px;
+          color: @grey-1;
+        }
+      }
+      .ant-select-arrow {
+        top: 40%;
+      }
+    }
+  }
+}
+.active {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1440px) {
+  .switchBox {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    margin-left: 30px;
+  }
+  .switch {
+    cursor: pointer;
+    font-size: 12px;
+    color: #999;
+  }
+}
+
+.dropdownContent {
+  :global {
+    .ant-select-dropdown-menu {
+      li {
+        text-align: center;
+        font-size: 14px;
+        color: #606060;
+      }
+      li.ant-select-dropdown-menu-item-selected {
+        font-weight: normal;
+      }
+      li.ant-select-dropdown-menu-item-active {
+        background-color: rgba(25, 145, 235, 0.1);
+      }
+      li:hover {
+        background-color: rgba(25, 145, 235, 0.1);
+      }
+    }
+  }
+}

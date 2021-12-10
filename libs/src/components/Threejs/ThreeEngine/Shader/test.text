@@ -1,0 +1,196 @@
+import { DepthFormat, NoBlending, RGBADepthPacking, UnsignedIntType } from "three";
+import { Color, DepthTexture, Matrix4, MeshDepthMaterial, ShaderMaterial, Vector2, Vector3, WebGLRenderTarget } from "three/build/three.module";
+import { Pass } from "three/examples/jsm/postprocessing/Pass";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
+
+var LightScanPass = function (resolution, scene, camera) {
+	Pass.call(this);
+	this._depthRT = new WebGLRenderTarget(resolution.x, resolution.y);
+	this._depthRT.texture.generateMipmaps = false;
+	this._depthRT.stencilBuffer = false;
+	this._depthRT.depthBuffer = true;
+	this._depthRT.depthTexture = new DepthTexture();
+	this._depthRT.depthTexture.format = DepthFormat;
+	this._depthRT.depthTexture.type = UnsignedIntType;
+
+
+	this._scene = scene;
+	this._camera = camera;
+	this._scanMaterial = new ShaderMaterial(createLightScanShader());
+	this.uniforms = this._scanMaterial.uniforms;
+	this.fsQuad = new Pass.FullScreenQuad(this._scanMaterial);
+
+	this.depthMaterial = new MeshDepthMaterial();
+	this.depthMaterial.depthPacking = RGBADepthPacking;
+	console.log(RGBADepthPacking);
+	this.depthMaterial.blending = NoBlending;
+
+	this.oldRenderClearColor = new Color();
+
+
+
+
+
+
+}
+LightScanPass.prototype = Object.assign(Object.create(Pass.prototype), {
+
+	constructor: LightScanPass,
+	dispose: function () {
+
+	},
+	setSize: function (width, height) {
+
+	},
+	render: function (renderer, writeBuffer, readBuffer, deltaTime, maskActive) {
+		var uniforms = this.uniforms;
+		var camera = this._camera;
+
+		renderer.getClearColor(this.oldRenderClearColor);
+
+		//渲染深度
+		renderer.setClearColor(0x000000, 1);
+		this._scene.overrideMaterial = this.depthMaterial;
+		renderer.setRenderTarget(this._depthRT);
+		renderer.clear();
+		renderer.render(this._scene, this._camera);
+		renderer.setRenderTarget(null);
+		renderer.setClearColor(this.oldRenderClearColor, 1);
+		this._scene.overrideMaterial = null;
+
+
+		uniforms._projectionInverse.value.copy(camera.projectionMatrixInverse);
+		uniforms._matrixWorld.value.copy(camera.matrixWorld);
+		uniforms._depthTex.value = this._depthRT.depthTexture;
+		uniforms._far.value = this._camera.far;
+		uniforms._near.value = this._camera.near;
+
+		uniforms._tDiffuse.value = readBuffer.texture;
+		this.fsQuad.material = this._scanMaterial;
+		renderer.setRenderTarget(null);
+		this.fsQuad.render(renderer);
+
+
+
+
+	},
+
+
+
+
+
+
+});
+
+
+
+var createLightScanShader = function () {
+	var defines = {
+		'DEPTH_PACKING': 0,
+		'PERSPECTIVE_CAMERA': 1,
+	};
+	var uniforms = {
+		_tDiffuse: { value: undefined },
+		_depthTex: { value: undefined },
+		_matrixWorld: { value: new Matrix4() },
+		_projectionInverse: { value: new Matrix4() },
+		_far: { value: 0 },
+		_near: { value: 0 },
+		_scanCenter: { value: new Vector3(0, 0, 0) },
+		_scanDistance: { value: 15000 },
+		_scanHeight: { value: new Vector2(-5, 200) },
+		_scanColor: { value: new Vector3(1., 0., 0.) },
+	}
+	var vertexShader = `
+		varying vec2 vUv;
+		
+		void main(){
+			vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+		}
+	`;
+	var fragmentShader = `
+		#include <packing>
+		uniform sampler2D _depthTex;
+		uniform sampler2D _tDiffuse;
+		uniform mat4 _matrixWorld;
+		uniform mat4 _projectionInverse;
+		uniform float _far;
+		uniform float _near;
+		uniform vec3 _scanCenter;
+		uniform vec3 _scanColor;
+		uniform float _scanDistance;
+		uniform vec2 _scanHeight;
+		varying vec2 vUv;
+
+		float getDepth(const in vec2 screenPos){
+			#if DEPTH_PACKING ==1
+				return unpackRGBAToDepth(texture2D(_depthTex,screenPos));
+			#else
+				return texture2D(_depthTex,screenPos).x;
+			#endif
+		}
+		vec3 computeWorldPosition4(){
+			//采样深度
+			float normalizedDepth = getDepth(vUv);
+			//裁剪空间坐标
+			vec4 ndc = vec4(
+				(vUv.x - 0.5) * 2.0,
+				(vUv.y - 0.5) * 2.0,
+				(normalizedDepth - 0.5) * 2.0,
+				1.0);
+			//投影到camera模型
+			vec4 clip = _projectionInverse*ndc;
+			//模型到世界
+			vec3 worldPos = (_matrixWorld*clip/clip.w).xyz;
+
+			return worldPos;
+		}
+
+		vec3 getScanColor(const in vec3 worldPos){
+			vec3 col = vec3(_scanColor);
+			//高度
+			float isScan = step(_scanHeight.x+_scanCenter.y,worldPos.y)*step(worldPos.y,_scanHeight.y+_scanCenter.y);
+			//半径
+			vec2 dp = worldPos.xz-_scanCenter.xz;
+			isScan*=step(dp.x*dp.x+dp.y*dp.y,_scanDistance*_scanDistance);
+			col.x = mod(worldPos.x,100.)/100.;
+			col.z = mod(worldPos.y,100.)/100.;
+
+			return col*isScan;
+		}
+		
+		void main(){
+			vec3 originCol = texture2D(_tDiffuse,vUv).rgb;
+			vec3 worldPos = computeWorldPosition4();
+			
+
+			vec3 scanColor = getScanColor(worldPos);
+			vec3 _col;
+			_col = scanColor;
+			gl_FragColor = vec4(_col,1.0);
+
+
+			// vec3 worldPosition = computeWorldPosition4();
+      // gl_FragColor = vec4( visualizePosition(worldPosition), 1.0);
+		}
+
+
+	`;
+
+	return {
+		defines,
+		uniforms,
+		vertexShader,
+		fragmentShader,
+		lights: false,
+		depthTest: false,
+		depthWrite: false,
+		transparent: true,
+		vertexColors: false
+	}
+}
+
+
+
+export { LightScanPass };

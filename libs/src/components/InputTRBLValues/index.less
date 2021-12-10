@@ -1,0 +1,15 @@
+.inputValues {
+  width: 100%;
+  display: flex;
+
+  :global {
+    .ant-input-number {
+      &:not(:first-child) {
+        margin: 0 2px;
+      }
+      &:not(:last-child) {
+        margin: 0 2px;
+      }
+    }
+  }
+}

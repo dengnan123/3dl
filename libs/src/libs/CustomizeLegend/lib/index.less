@@ -1,0 +1,75 @@
+.legend {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+
+  .item {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      min-width: 50%;
+      text-align: left;
+
+      span {
+        display: inline-block;
+        max-width: 100%;
+        height: 100%;
+        line-height: inherit;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .right {
+      height: 100%;
+      display: flex;
+      max-width: 50%;
+      align-items: center;
+
+      span {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        line-height: inherit;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.hideScrollBar {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.legend .item.vertical {
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+
+  .content {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  .value {
+    text-align: left;
+  }
+}

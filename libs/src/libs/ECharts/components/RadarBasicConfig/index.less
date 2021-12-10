@@ -1,0 +1,21 @@
+.centerItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  :global {
+    .ant-form-item {
+      display: flex;
+      align-items: center;
+      width: 46%;
+
+      .ant-form-item-label {
+        width: 20px;
+      }
+
+      .ant-form-item-control-wrapper {
+        flex: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+node_modules
+es
+dist
+/lib
+/umd-dist
+example
+.DS_Store
+/src/.DS_*
+
+# umi
+.umi
+.umi-production
+
+package-lock.json
+yarn.lock
+
+yarn.lock
+*.zip
+umd-dist/*

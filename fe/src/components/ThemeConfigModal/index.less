@@ -1,0 +1,83 @@
+.section {
+  width: 100%;
+  height: calc(100vh - 103px);
+
+  .top {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 10px;
+  }
+
+  .center {
+    width: 100%;
+    height: calc(100% - 52px);
+    overflow-y: auto;
+
+    .list {
+      list-style: none;
+      padding: 2px;
+
+      li {
+        margin-bottom: 20px;
+        padding: 2px;
+        &:hover {
+          .card {
+            :global {
+              .ant-card-extra {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      .active {
+        border-radius: 2px;
+        background: linear-gradient(0deg, transparent 50%, #4de44d 50%) repeat-y,
+          linear-gradient(0deg, transparent 50%, #4de44d 50%) repeat-y,
+          linear-gradient(90deg, transparent 50%, #4de44d 50%) repeat-x,
+          linear-gradient(90deg, transparent 50%, #4de44d 50%) repeat-x;
+        background-size: 2px 12px, 2px 12px, 12px 2px, 12px 2px;
+        background-position: 0 0, 100% 0, 0 0, 0 100%;
+        animation: shine 1s infinite linear;
+      }
+
+      @keyframes shine {
+        from {
+        }
+        to {
+          background-position: 0 -12px, 100% 12px, 12px 0, -12px 100%;
+        }
+      }
+
+      .card {
+        :global {
+          .ant-card-body {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+          }
+          .ant-card-head {
+            min-height: unset;
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #9e9c9c;
+            border-bottom: 1px dotted #e8e8e8;
+          }
+          .ant-card-head-title {
+            padding: 0px;
+          }
+
+          .ant-card-extra {
+            opacity: 0;
+            transition: all 0.3s;
+            padding: 0;
+            color: #0fe40f;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

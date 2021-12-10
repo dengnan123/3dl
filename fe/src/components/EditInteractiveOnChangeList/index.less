@@ -1,0 +1,61 @@
+.changeContent {
+  width: 100%;
+  .item {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+    text-align: left;
+    cursor: pointer;
+
+    > p {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  > .item:last-child {
+    border-bottom: none;
+  }
+}
+
+.item:hover {
+  p.title {
+    color: #1991eb;
+  }
+  .icon {
+    display: block;
+  }
+  .icon > i {
+    color: #1991eb;
+  }
+}
+
+p.title {
+  line-height: 20px;
+  font-size: 14px;
+}
+
+span.tips {
+  line-height: 20px;
+  font-size: 14px;
+  color: #999999;
+  margin-left: 5px;
+}
+
+.tips.setting {
+  color: #1991eb;
+}
+
+.icon {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  > i {
+    font-size: 14px;
+    color: #999999;
+  }
+}

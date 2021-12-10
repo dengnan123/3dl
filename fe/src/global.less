@@ -1,0 +1,41 @@
+@import './themes/table.less';
+@import './themes/menu.less';
+@import './themes/select.less';
+@import './themes/pagination.less';
+@import './themes/modal.less';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-y: hidden;
+  :global {
+    .ant-drawer-mask {
+      opacity: 0.5 !important;
+    }
+    .ant-collapse-borderless {
+      background-color: unset !important;
+    }
+    .ant-collapse {
+      background-color: unset !important;
+    }
+  }
+}
+
+/** ******* 自定义动画 ****** */
+.df__animate__rotate {
+  animation: df__animate__rotate 1s linear;
+}
+
+@keyframes df__animate__rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

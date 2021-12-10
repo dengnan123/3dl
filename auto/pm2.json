@@ -1,0 +1,15 @@
+{
+  "apps": [
+    {
+      "name": "autoBuild",
+      "script": "./dist/main.js",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 3005
+      },
+      "autorestart": true,
+      "error_file": "./logs/err.log",
+      "out_file": "./logs/out.log"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+@import '../../../../../themes/default.less';
+.form {
+  :global {
+    .ant-form-explain {
+      position: absolute;
+      font-size: 14px;
+      padding-left: 10px;
+      top: 46px;
+      color: #eb4b19;
+    }
+  }
+  input::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    font-size: 18px;
+    color: #d9d9d9;
+  }
+  input::-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    font-size: 18px;
+    color: #d9d9d9;
+  }
+  input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    font-size: 18px;
+    color: #d9d9d9;
+  }
+  input::-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-size: 18px;
+    color: #d9d9d9;
+  }
+  input::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-size: 18px;
+    color: #d9d9d9;
+    line-height: 40px;
+  }
+  form {
+    height: 450px;
+  }
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgb(204, 204, 204);
+    text-align: center;
+  }
+  .loginTitle {
+    width: 402px;
+    height: 50px;
+    margin-bottom: 40px;
+    .logo {
+      width: 142px;
+      float: left;
+    }
+    .borderLine {
+      width: 1px;
+      height: 28px;
+      background: #ccc;
+      margin: 6px 40px 0;
+      float: left;
+    }
+    .sysTitle {
+      font-size: 26px;
+      color: #424242;
+      float: left;
+      line-height: 50px;
+    }
+  }
+
+  .formTitle {
+    font-size: 18px;
+    color: #424242;
+    margin-bottom: 30px;
+
+    .back {
+      float: right;
+      height: 27px;
+    }
+  }
+  .input {
+    width: 402px;
+    height: 40px;
+    color: #424242;
+    font-size: 18px;
+  }
+  .input input {
+    width: 402px;
+    height: 40px;
+    color: #424242;
+    font-size: 18px;
+  }
+  .inputCode {
+    width: 192px;
+    height: 40px;
+    float: left;
+    font-size: 18px;
+  }
+  .img {
+    width: 190px;
+    height: 40px;
+    float: left;
+    margin-left: 20px;
+  }
+  .formItem {
+    margin-bottom: 30px;
+  }
+  .forgetPassword,
+  .register {
+    font-size: 16px;
+    color: #1991eb;
+    padding: 0;
+    height: 24px;
+  }
+  .submitBtn {
+    width: 402px;
+    height: 40px;
+    border-radius: 4px;
+    font-weight: 200;
+    margin-bottom: 30px;
+    span {
+      font-size: 20px;
+    }
+  }
+  .iconItem {
+    width: 32px;
+    height: 32px;
+  }
+  .iconBox2 {
+    width: 32px;
+    height: 32px;
+    margin-right: 24px;
+    float: left;
+  }
+
+  .text {
+    font-size: 16px;
+    color: #999;
+    margin-right: 30px;
+    line-height: 30px;
+  }
+}
+
+.labelIcon {
+  font-size: 36px;
+  color: @primary-color;
+  line-height: 40px;
+}
+
+@media screen and (max-width: 1440px) {
+  .form {
+    input::-webkit-input-placeholder {
+      /* WebKit, Blink, Edge */
+      font-size: 16px;
+      color: #d9d9d9;
+      // line-height: 40px;
+    }
+    input::-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      font-size: 16px;
+      color: #d9d9d9;
+      // line-height: 40px;
+    }
+    input::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      font-size: 16px;
+      color: #d9d9d9;
+      // line-height: 40px;
+    }
+    input::-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      font-size: 16px;
+      color: #d9d9d9;
+      // line-height: 40px;
+    }
+    input::-ms-input-placeholder {
+      /* Microsoft Edge */
+      font-size: 16px;
+      color: #d9d9d9;
+      // line-height: 40px;
+    }
+    .input {
+      width: 368px;
+      height: 40px;
+      color: #424242;
+      font-size: 16px;
+    }
+    .input input {
+      width: 368px;
+      height: 40px;
+      color: #424242;
+      font-size: 16px;
+    }
+    .captchaInput {
+      font-size: 16px;
+    }
+    .formTitle {
+      font-size: 16px;
+      color: #424242;
+      line-height: 16px;
+      margin-bottom: 30px;
+    }
+
+    .forgetPassword {
+      font-size: 14px;
+    }
+    .passwordBtns {
+      > button {
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .inputCode {
+      width: 202px;
+    }
+    .img {
+      width: 146px;
+    }
+    .text {
+      margin-right: 20px;
+    }
+
+    .iconBox2 {
+      margin-right: 20px;
+    }
+
+    .passwordBtns {
+      > button {
+        width: 176px;
+      }
+    }
+  }
+}

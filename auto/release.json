@@ -1,0 +1,8 @@
+{
+  "host": "40.72.105.107",
+  "username": "dfadmin",
+  "password": "Admin@123456*3DL",
+  "source": "auto-build.zip",
+  "targetPath": "/home/dfadmin/screen",
+  "startShellPath": "/home/dfadmin/screen/ab.sh" 
+}

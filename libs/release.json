@@ -1,0 +1,8 @@
+{
+    "host": "192.168.10.93",
+    "username": "root",
+    "password": "DfocuSpace@P20m8",
+    "source": "df-screen-libs.zip",
+    "targetPath": "/root/screen",
+    "startShellPath": "/root/screen/lib.sh"
+  }

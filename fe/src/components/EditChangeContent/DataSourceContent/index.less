@@ -1,0 +1,60 @@
+// 列表显示
+.itemsList {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: 40px;
+  margin-top: 20px;
+  > div.itemDiv {
+    margin-right: 8px;
+    margin-bottom: 5px;
+    padding: 0 7px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #1890ff;
+    white-space: nowrap;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #91d5ff;
+    border-radius: 4px;
+    background-color: #e6f7ff;
+  }
+
+  .noSetting {
+    width: 100%;
+    padding: 0px;
+    font-size: 16px;
+    color: #d9d9d9;
+    text-align: center;
+  }
+}
+
+// 数据源列表
+.dataList {
+  width: 100%;
+  h3 {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    color: #606060;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+  }
+  > div {
+    width: 100%;
+  }
+  :global {
+    .ant-checkbox-group {
+      width: 100%;
+    }
+    .ant-checkbox-group label {
+      // display: block;
+      width: 50%;
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+  }
+}

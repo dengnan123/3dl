@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="7px" viewBox="0 0 14 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57 (83077) - https://sketch.com -->
+    <title></title>
+    <desc>Created with Sketch.</desc>
+    <g id="组件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="置顶" transform="translate(-13.000000, -8.000000)" fill="#999999" fill-rule="nonzero">
+            <g id="TopBtn-" transform="translate(0.000000, 0.000000)">
+                <g id="分组-10">
+                    <path d="M23.6301812,10.0288606 L23.6301812,17.2892229 C23.6301812,17.5653653 23.4063235,17.7892229 23.1301812,17.7892229 L15.8698188,17.7892229 C15.5936765,17.7892229 15.3698188,18.0130806 15.3698188,18.2892229 C15.3698188,18.5653653 15.5936765,18.7892229 15.8698188,18.7892229 L23.1301812,18.7892229 C23.9586083,18.7892229 24.6301812,18.1176501 24.6301812,17.2892229 L24.6301812,10.0288606 C24.6301812,9.75271822 24.4063235,9.52886059 24.1301812,9.52886059 C23.8540388,9.52886059 23.6301812,9.75271822 23.6301812,10.0288606 Z" id="路径-copy" transform="translate(20.000000, 14.159042) scale(1, -1) rotate(-315.000000) translate(-20.000000, -14.159042) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui"
+    />
+    <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="google" content="notranslate" />
+
+    <style media="screen">
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        position: relative;
+        background-color: unset;
+        overscroll-behavior:contain;
+        /* font-family: -apple-system, BlikMacSystemFont, 'PingFang SC', 'SF Pro Display', 'San Francisco',
+          'Segoe UI', 'Roboto', 'Helvetica Neue', 'Helvetica', 'STXihei', 'Microsoft Yahei', 'Courier New',
+          'Courier', 'Heiti SC', 'Droid Sans', 'Droid Sans Fallback', 'Sans-serif' !important; */
+      }
+      #root{
+        width: 100%;
+        height: 100%;
+      }
+       #loading {
+        position: fixed;
+        z-index: 9999;
+        /* width: 100vw;
+        height: 100vh; */
+        background-color: #fff;
+        left: 0px;
+        top: 0px;
+        visibility: hidden;
+        opacity: 1;
+        overflow: hidden;
+        transition: opacity 0.3s linear, width 0.3s 0.3s linear, height 0.3s 0.3s linear;
+      }
+
+       #loading > div {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 180px;
+        width: 120px;
+        margin: auto;
+      }
+
+       #loading.remove {
+        width: 0px !important;
+        height: 0px !important;
+        opacity: 0;
+      }
+
+      #loading .text-loading {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        color: #f18f5b;
+        font-size: 14px;
+        font-weight: bold;
+        opacity: 0;
+        text-align: center;
+        user-select: none;
+        animation: text-hide 2s linear infinite;
+        transition: color 0.5s ease-in-out;
+      }
+
+      #loading .circle-loading {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        border-radius: 100%;
+        border: 2px solid transparent;
+        border-color: transparent #f18f5b transparent #f18f5b;
+        animation: circle-rotate 1.5s linear infinite;
+        transition: border-color 0.5s ease-in-out;
+      }
+
+      #loading .text-tip-loading {
+        width: 100%;
+        width: 100%;
+        height: 26px;
+        margin: 0;
+        margin-top: 20px;
+        line-height: 26px;
+        color: #f18f5b;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+        transition: color 0.5s ease-in-out;
+      }
+
+      @keyframes text-hide {
+        0% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes circle-rotate {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #e6e6e6;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <% if (htmlWebpackPlugin.options.isPrivateDeployment) { %>
+      LOADING_PLACEHOLDER
+    <% } else { %>
+      <div id="loading">
+        <div>
+          <div class="circle-loading"></div>
+          <div class="text-loading">LOADING...</div>
+          <p class="text-tip-loading">DFOCUS 3DL</p>
+        </div>
+      </div>
+    <% } %>
+    <script>
+        function queryString(str) {
+        var obj = {};
+        var arr = str.replace('?', '').split('&');
+        for (var i; i < arr.length; i++) {
+          var arr1 = n.split('=');
+          var key = arr1[0];
+          obj[key] = arr1[1];
+        }
+        return obj;
+      }
+      var _queryString = queryString(window.location.search),
+        loadingWidth = _queryString.loadingWidth,
+        loadingHeight = _queryString.loadingHeight;
+
+      var loadingNode = document.getElementById('loading');
+
+      if (loadingNode && loadingWidth) {
+        loadingNode.style.width = loadingWidth + 'px';
+      } else {
+        loadingNode.style.width = '100vw';
+      }
+
+      if (loadingNode && loadingHeight) {
+        loadingNode.style.height = loadingHeight + 'px';
+      } else {
+        loadingNode.style.height = '100vh';
+      }
+      loadingNode.style.visibility = 'visible';
+      if ('SHOW_VCONSOLE' === 'true') {
+        // 插入vconsole .js
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'UMI_PUBLIC_PATH/js/vconsole.min.js';
+        document.body.appendChild(script);
+        setTimeout(function() {
+          console.log('实例化vconsole。。');
+          // eslint-disable-next-line no-undef
+          new VConsole();
+        }, 2000);
+      }
+    </script>
+    <script src="<%= htmlWebpackPlugin.options.base %>" crossorigin></script>
+    <script src="<%= htmlWebpackPlugin.options.moment %>" crossorigin></script>
+    <script src="<%= htmlWebpackPlugin.options.antd %>" crossorigin></script>
+    <script src="<%= htmlWebpackPlugin.options.echarts %>" crossorigin></script>
+    <script src="<%= htmlWebpackPlugin.options.fengmap %>" crossorigin></script>
+    <script src="<%= htmlWebpackPlugin.options.l7 %>" crossorigin></script>
+    <script src="<%= htmlWebpackPlugin.options.kinect %>" crossorigin></script>
+  </body>
+
+</html>

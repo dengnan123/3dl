@@ -1,0 +1,72 @@
+.top {
+  position: relative;
+  width: 100%;
+  min-height: 40px;
+  margin-bottom: 30px;
+
+  .add {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    padding-left: 34px;
+    .plus {
+      position: absolute;
+      left: 15px;
+      top: -4px;
+      font-size: 24px;
+    }
+  }
+}
+
+// type:
+.typeDiv {
+  width: 100%;
+  line-height: 30px;
+  span {
+    margin-right: 10px;
+    display: inline-block;
+    height: auto;
+    padding: 0 14px;
+    color: #999999;
+    font-size: 14px;
+    line-height: 26px;
+    white-space: nowrap;
+    background: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  span.current {
+    color: #52c41a;
+    background: #f6ffed;
+    border-color: #b7eb8f;
+  }
+}
+
+// 标签分类
+.tagsDiv {
+  width: 100%;
+  line-height: 30px;
+  > span {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.tagsBox {
+  > span {
+    padding: 5px;
+    font-size: 14px;
+    color: #999999;
+    cursor: pointer;
+  }
+  > span:hover {
+    color: #1991eb;
+    text-decoration: underline;
+  }
+  > span.active {
+    color: #1991eb;
+    text-decoration: underline;
+  }
+}

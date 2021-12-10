@@ -1,0 +1,50 @@
+.selectLoading {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 32px;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  line-height: 22px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+
+  .placeholder {
+    color: #bfbfbf;
+  }
+}
+
+.loadingModal {
+  :global {
+    .ant-modal-body {
+      &::after {
+        display: block;
+        content: '';
+        clear: both;
+      }
+    }
+  }
+
+  .modalLeft {
+    float: left;
+    width: 400px;
+    height: 600px;
+  }
+
+  .modalRight {
+    float: right;
+    width: 220px;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    :global {
+      .ant-radio-wrapper {
+        display: block;
+        line-height: 30px;
+      }
+    }
+  }
+}

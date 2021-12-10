@@ -1,0 +1,113 @@
+// .pageConfig {
+//   overflow-y: scroll;
+//   padding-bottom: 100px;
+//   padding-top: 10px;
+//   &::-webkit-scrollbar {
+//     width: 0;
+//   }
+//   .coverDiv {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//   .imgDiv {
+//     width: 230px;
+//     img {
+//       transform: scale(0.8);
+//       width: 100%;
+//       height: 100%;
+//     }
+//   }
+// }
+
+.buttonsDiv {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  width: 62px;
+  height: 100%;
+  padding-top: 10px;
+  background-color: #ffffff;
+
+  div {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 0 16px 0;
+    padding: 0;
+    text-align: center;
+    color: #606060;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  div.isSelected {
+    color: #1991eb;
+    font-weight: 500;
+  }
+  div:hover {
+    color: #1991eb;
+    font-weight: 500;
+  }
+
+  .activeLink {
+    position: absolute;
+    left: -1px;
+    top: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 2px;
+    height: 40px;
+    background-color: #1991eb;
+    transform-origin: 0 0;
+    transition: top 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+.customizeDrawer {
+  position: absolute;
+  right: 63px;
+  top: 0;
+  width: 380px;
+  height: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  z-index: 99;
+  border-left: 1px gainsboro solid;
+  // transition: right 0.3s ease-in-out;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  :global {
+    .ant-form-item-label {
+      height: 36px;
+      line-height: 36px;
+      label {
+        color: #606060;
+      }
+    }
+  }
+}
+
+.itemRows {
+  :global {
+    .ant-col-12:first-child {
+      padding-right: 10px;
+    }
+  }
+  button {
+    min-width: 120px;
+  }
+}
+
+.lazyLoadingItem {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  margin: 0 !important;
+  > div {
+    float: left;
+  }
+}

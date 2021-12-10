@@ -1,0 +1,45 @@
+.topDiv {
+  margin-bottom: 10px;
+}
+.list {
+  :global {
+    .ant-spin-nested-loading {
+      // margin-left: -15px;
+    }
+  }
+  .listItem {
+    > i {
+      margin-right: 12px;
+      color: white;
+      font-size: 18px;
+    }
+  }
+}
+
+.box {
+  &:not(:last-child) {
+    border-bottom: 1px solid #404040;
+    margin-bottom: 20px;
+  }
+  h3 {
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+    > i {
+      display: none;
+      margin-left: 10px;
+    }
+  }
+  h3:hover {
+    color: #1991eb;
+    > i {
+      display: inline-block;
+      color: #1991eb;
+    }
+  }
+  p {
+    padding: 0 0 0 10px;
+    text-indent: 2em;
+    color: #ccc;
+  }
+}

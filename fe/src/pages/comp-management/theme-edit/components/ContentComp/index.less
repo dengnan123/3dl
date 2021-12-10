@@ -1,0 +1,54 @@
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 53px;
+  overflow: auto;
+
+  .top {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    min-width: 680px;
+    display: flex;
+    justify-content: center;
+
+    .compName {
+      line-height: 39px;
+      color: #1991eb;
+      font-size: 16px;
+    }
+
+    :global {
+      .ant-form-item {
+        width: 200px;
+      }
+
+      .ant-input-number {
+        width: 100%;
+      }
+    }
+  }
+
+  .center {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    .compContainer {
+      margin: 0 auto;
+      .canvas {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

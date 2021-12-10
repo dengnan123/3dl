@@ -1,0 +1,38 @@
+.bg {
+  transform: scale(1);
+}
+
+.drawerModal {
+  position: relative;
+  overflow: hidden;
+  z-index: 999;
+  transform: scale(0);
+  .item {
+    position: absolute;
+  }
+}
+.drawerModalHidden {
+  transform: scale(0);
+}
+.showClass {
+  transform: scale(1);
+  transition: transform 0.35s;
+  transform-origin: bottom left;
+}
+
+.itemDiv {
+  > div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .number {
+    font-size: 60px;
+  }
+  .min{
+    font-size: 36px;
+  }
+  .text{
+    font-size: 48px;
+  }
+}

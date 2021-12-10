@@ -1,0 +1,73 @@
+// 组件页面列表渲染
+.pageListContent {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  max-height: 600px;
+  overflow-y: auto;
+
+  .pageItem:last-child {
+    border-bottom: none;
+  }
+}
+
+.pageItem {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  overflow: hidden;
+  border-bottom: 1px dashed #d9d9d9;
+  > label {
+    display: block;
+    float: left;
+    width: 110px;
+    line-height: 40px;
+    // text-align: right;
+    color: #999999;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &.current {
+      color: #1991eb;
+    }
+  }
+  > div {
+    margin-left: 120px;
+  }
+}
+
+// 列表显示
+.pageItemComps {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: 40px;
+  > div {
+    margin: 3px 8px 3px 0;
+    padding: 0 7px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #1890ff;
+    white-space: nowrap;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #91d5ff;
+    border-radius: 4px;
+    background-color: #e6f7ff;
+  }
+
+  > div.addItem {
+    color: #999999;
+    border-style: dashed;
+    border-color: #d9d9d9;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+  > div.addItem:hover {
+    color: #1890ff;
+    border-color: #91d5ff;
+    background-color: #e6f7ff;
+  }
+}

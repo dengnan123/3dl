@@ -1,0 +1,65 @@
+// 组件页面列表渲染
+.pageListContent {
+  position: relative;
+  width: 100%;
+}
+
+.pageItem {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  overflow: hidden;
+  border-bottom: 1px dashed #d9d9d9;
+  h3 {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    color: #606060;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: left;
+    cursor: pointer;
+    &:hover {
+      // font-weight: normal;
+      color: #1991eb;
+    }
+  }
+  h3.active {
+    font-weight: bold;
+    color: #293d4a;
+
+    .titleIcon i {
+      transform: rotate(180deg);
+    }
+  }
+  h3 .titleIcon {
+    margin-left: 10px;
+    font-size: 12px;
+    i {
+      transition: all 0.3s linear;
+    }
+  }
+  h3.current {
+    font-weight: bold;
+    color: #1991eb !important;
+  }
+}
+
+// 列表显示
+.pageItemComps {
+  display: block;
+  width: 100%;
+  .noDataTips {
+    padding: 10px 0;
+    text-align: center;
+    color: #999999;
+  }
+
+  > div {
+    line-height: 26px;
+    button {
+      height: 26px;
+      line-height: 26px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.container {
+  > div {
+    width: 100%;
+
+    :global {
+      .ant-row,
+      .ant-form-item {
+        // display: flex !important;
+        margin-bottom: 4px;
+
+        .ant-form-item-label {
+          > label {
+            color: #999999 !important;
+          }
+        }
+      }
+    }
+  }
+}

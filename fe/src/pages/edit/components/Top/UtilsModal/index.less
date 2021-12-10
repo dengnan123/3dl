@@ -1,0 +1,123 @@
+.utilContainer {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  z-index: 99999;
+  height: 60px;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+.utilDrawer {
+  background-color: black;
+
+  .box {
+    &:not(:last-child) {
+      border-bottom: 1px solid #404040;
+      margin-bottom: 20px;
+    }
+    h3 {
+      display: inline-block;
+      color: #fff;
+      cursor: pointer;
+    }
+    p {
+      padding: 0 0 0 10px;
+      text-indent: 2em;
+      color: #ccc;
+    }
+  }
+
+  :global {
+    .ant-drawer-header {
+      background-color: #232e36;
+      border-color: #404040;
+
+      .ant-drawer-title {
+        color: #fff;
+      }
+
+      .ant-drawer-close {
+        color: #fff;
+      }
+    }
+    .ant-drawer-content {
+      background-color: #232e36;
+    }
+
+    .ant-drawer-body {
+      .ant-collapse {
+        border-color: #434343;
+
+        & > .ant-collapse-item {
+          border-bottom-color: #434343;
+
+          .ant-collapse-header {
+            text-align: left;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.04);
+            padding: 8px 40px 8px 8px;
+          }
+
+          .ant-collapse-content {
+            background-color: unset;
+            border-top-color: #434343;
+          }
+        }
+      }
+
+      .ant-select {
+        margin-bottom: 10px;
+        background-color: unset;
+        color: #fff;
+
+        .ant-select-selection__clear {
+          background-color: unset;
+          color: #fff;
+        }
+
+        .ant-select-selection {
+          background-color: unset;
+
+          .ant-select-arrow {
+            color: #fff;
+          }
+        }
+
+        .ant-empty {
+          color: #fff;
+        }
+
+        &:not(.ant-select-open) {
+          .ant-select-selection {
+            background-color: unset;
+            border-color: #434343;
+          }
+        }
+
+        .ant-select-dropdown {
+          top: 36px !important;
+          background-color: #292929;
+
+          .ant-select-dropdown-menu {
+            max-height: 800px;
+          }
+
+          .ant-select-dropdown-menu-item {
+            color: #fff;
+            text-align: left;
+          }
+          .ant-select-dropdown-menu-item-active {
+            background-color: rgba(255, 255, 255, 0.08);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+
+  .top {
+    height: 40px;
+    margin-bottom: 10px;
+
+    .label {
+      line-height: 40px;
+      font-size: 14px;
+      color: #424242;
+    }
+
+    .upload {
+      float: right;
+      margin-top: 4px;
+    }
+  }
+
+  .desc {
+    display: flex;
+    margin-bottom: 10px;
+
+    .total {
+      width: 100%;
+      line-height: 24px;
+      font-size: 14px;
+      span {
+        color: #1991eb;
+      }
+    }
+
+    .switch {
+      margin-bottom: 0;
+    }
+  }
+
+  .tableImg {
+    height: 60px;
+  }
+
+  .card {
+    cursor: default;
+    :global {
+      .ant-card-cover {
+        width: 100%;
+        overflow: hidden;
+
+        :local {
+          .corverImg {
+            padding-top: 80%;
+            transition: all 0.3s;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(1.5);
+              transform-origin: center;
+            }
+          }
+        }
+      }
+
+      .ant-card-body {
+        position: relative;
+        padding: 12px;
+
+        p {
+          margin-bottom: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .size {
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #999;
+      text-align: right;
+      font-size: 12px;
+      padding-right: 5px;
+    }
+  }
+}

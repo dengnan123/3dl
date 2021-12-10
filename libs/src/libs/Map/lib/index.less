@@ -1,0 +1,22 @@
+.mapContainer {
+  >div {
+    >div {
+      &:first-child {
+        background-color: unset !important;
+        background: unset !important;
+        z-index: 1;
+      }
+    }
+  }
+
+  :global {
+    canvas {
+      background: #fff0 !important;
+    }
+
+    .fm-control-tool-3d {
+      // background-color: rgba(55, 76, 104, 0.5) !important;
+      z-index: 99;
+    }
+  }
+}

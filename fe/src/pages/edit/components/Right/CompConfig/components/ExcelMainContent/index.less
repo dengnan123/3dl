@@ -1,0 +1,70 @@
+.sheetContainer {
+  width: 100%;
+  max-height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.sheetTable {
+  width: 100%;
+  :global {
+    .ant-table-thead > tr > th {
+      height: 38px;
+      line-height: 38px;
+      padding: 0;
+      text-align: center;
+      background-color: #1991eb;
+      color: #ffffff;
+    }
+    .ant-table-thead > tr:first-child > th:first-child,
+    .ant-table-thead > tr:first-child > th:last-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .ant-table-tbody > tr > td {
+      height: 38px;
+      line-height: 38px;
+      padding: 0;
+      text-align: center;
+    }
+
+    .ant-table-tbody td input,
+    .ant-input {
+      width: 100%;
+      height: 38px;
+      padding: 4px;
+      border-radius: 0;
+      border: none;
+      background-color: transparent;
+    }
+    .ant-table-tbody .ant-input:focus {
+      box-shadow: none;
+      border: 1px solid #1991eb;
+    }
+    // Form
+    .ant-form-item-control {
+      line-height: 38px;
+    }
+    .ant-form-item {
+      margin: 0;
+    }
+    .ant-select {
+      width: 100%;
+      .ant-select-selection--single {
+        height: 38px;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+      }
+    }
+    .ant-input-number {
+      width: 100%;
+      height: 38px;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+}

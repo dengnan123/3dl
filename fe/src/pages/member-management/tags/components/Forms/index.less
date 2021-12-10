@@ -1,0 +1,46 @@
+.formMain {
+  position: relative;
+  padding: 24px;
+  :global {
+    .ant-form-item {
+      margin-bottom: 6px;
+      overflow: hidden;
+    }
+    .ant-form-item-label {
+      float: left;
+      width: 80px;
+      line-height: 32px;
+      text-align: right;
+      label {
+        color: #999999;
+      }
+    }
+    .ant-form-item-control-wrapper {
+      margin-left: 80px;
+    }
+    .ant-row {
+      padding: 3px 0px;
+    }
+    .ant-form-item-control {
+      line-height: initial;
+    }
+    .ant-input-suffix {
+      svg * {
+        fill: #999999;
+      }
+    }
+  }
+}
+
+.formBtns {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 24px;
+  text-align: right;
+  border-top: 1px solid #e8e8e8;
+  button {
+    margin-left: 10px;
+  }
+}

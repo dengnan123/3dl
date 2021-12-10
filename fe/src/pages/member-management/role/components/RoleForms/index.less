@@ -1,0 +1,217 @@
+/// Form Content
+.formMain {
+  position: relative;
+  max-height: calc(100% - 80px);
+  padding: 24px;
+  overflow: hidden;
+  :global {
+    .ant-form-item {
+      margin-bottom: 6px;
+      overflow: hidden;
+    }
+    .ant-form-item-label {
+      float: left;
+      width: 80px;
+      line-height: 32px;
+      text-align: right;
+      label {
+        color: #999999;
+      }
+    }
+    .ant-form-item-control-wrapper {
+      margin-left: 80px;
+    }
+    .ant-row {
+      padding: 3px 0px;
+    }
+    .ant-form-item-control {
+      line-height: initial;
+    }
+    .ant-input-suffix {
+      svg * {
+        fill: #999999;
+      }
+    }
+  }
+}
+
+.checkboxItem {
+  :global {
+    .ant-form-item-control-wrapper {
+      .ant-form-item-control {
+        line-height: 32px;
+      }
+    }
+  }
+}
+
+.formBtns {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 14px 24px;
+  text-align: right;
+  border-top: 1px solid #e8e8e8;
+  background-color: #f7f8fa;
+  button {
+    margin-left: 10px;
+  }
+}
+
+// 权限
+.permContent {
+  width: 100%;
+  // min-height: 300px;
+  height: 420px;
+  padding: 0 10px;
+  overflow-y: auto;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  .pItem {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #d9d9d9;
+  }
+  .pItem:last-child {
+    border-bottom: none;
+  }
+  .detailBtn {
+    display: inline-block;
+    cursor: pointer;
+    > i {
+      color: #999999;
+    }
+  }
+}
+
+.childrenList {
+  width: 100%;
+  max-height: 0;
+  padding-left: 18px;
+  overflow: hidden;
+  :global {
+    .ant-checkbox-group {
+      width: 100%;
+      padding-top: 10px;
+      .ant-checkbox-group-item {
+        width: 50%;
+        height: 28px;
+        margin: 0;
+        line-height: 28px;
+        overflow: hidden;
+      }
+    }
+  }
+  .emptyTip {
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    color: #999999;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+.childrenList.show {
+  max-height: 700px;
+  transition: max-height 0.6s ease-in-out;
+}
+
+// Tabs
+.tabsContent {
+  width: 100%;
+  :global {
+    .ant-tabs-bar {
+      margin: 0 0 5px 0;
+      border-bottom: none;
+    }
+    .ant-tabs-nav .ant-tabs-tab {
+      margin-right: 18px;
+      padding: 6px 6px;
+      font-size: 14px;
+      font-weight: normal
+    }
+
+    .ant-tabs-nav .ant-tabs-tab[aria-selected="false"] {
+      color: #999999;
+    }
+  }
+}
+
+// 功能权限
+.featPerm {
+  border: none
+}
+
+.modules {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: solid 1px #d9d9d9;
+
+  > h3 {
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+    
+    :global {
+      .ant-checkbox-wrapper {
+        // color: #666666;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .ant-checkbox-inner {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}
+
+
+
+.modules .rowItem {
+  width: 100%;
+  // height:40px;
+  padding: 10px 0 10px 20px;
+  line-height: 30px;
+  border-bottom: 1px dashed #f0f0f0;
+  > div {
+    height: 100%;
+  }
+
+  :global {
+    .ant-row {
+      padding: 0;
+    }
+    .ant-checkbox-indeterminate .ant-checkbox-inner {
+      background-color: #fff;
+      border-color: #d9d9d9;
+    }
+
+    .ant-checkbox-indeterminate .ant-checkbox-inner::after {
+      left: 50%;
+      background-color: #1991eb;
+      opacity: 0.4;
+    }
+
+    .ant-checkbox-group {
+      width: 100%;
+      .ant-checkbox-wrapper {
+        width: 22%;
+        color: #999999;
+      }
+    }
+
+    .ant-checkbox-wrapper {
+      font-size: 14px;
+      color: #666666;
+    }
+
+  
+    .ant-checkbox-inner {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

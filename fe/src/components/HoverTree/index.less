@@ -1,0 +1,32 @@
+.expand {
+  text-align: right;
+}
+
+.tree {
+  color: white;
+  padding-left: 10px;
+
+  li {
+    padding: 0 !important;
+  }
+
+  :global {
+    .ant-tree-switcher {
+      height: 50px !important;
+      line-height: 50px !important;
+
+      .ant-tree-switcher-icon {
+        font-size: 20px !important;
+        vertical-align: middle;
+      }
+    }
+
+    .ant-tree-node-content-wrapper {
+      height: 50px !important;
+      line-height: 50px !important;
+      width: calc(100% - 24px);
+      padding: 0 !important;
+      background-color: unset !important;
+    }
+  }
+}

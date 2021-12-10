@@ -1,0 +1,44 @@
+.modal {
+  :global {
+    .ant-modal-body {
+      height: 600px;
+
+      &::after {
+        display: block;
+        content: '';
+        clear: both;
+      }
+    }
+  }
+
+  .left {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .animateBtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .right {
+    float: right;
+    width: 45%;
+    padding-left: 20px;
+    height: 100%;
+    border-left: 1px dashed #d8d8d8;
+
+    :global {
+      .ant-select,
+      .ant-input-number {
+        width: 100%;
+      }
+    }
+  }
+}

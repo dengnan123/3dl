@@ -1,0 +1,133 @@
+.container {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  .viewBtn {
+    position: absolute;
+    right: 400px;
+    top: 10px;
+    z-index: 1;
+  }
+
+  .left {
+    width: calc(100% - 360px);
+    height: 800px;
+  }
+
+  .right {
+    width: 360px;
+    height: 800px;
+    padding: 10px 10px;
+    border-left: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    :global {
+      .ant-input-number,
+      .ant-select {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.loading {
+  // position: fixed;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  // left: 0px;
+  // top: 0px;
+  visibility: visible;
+  opacity: 1;
+  overflow: hidden;
+  transition: opacity 0.3s linear, width 0.3s 0.3s linear, height 0.3s 0.3s linear;
+}
+
+.loading > div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 180px;
+  width: 120px;
+  margin: auto;
+}
+
+.loading.remove {
+  width: 0px !important;
+  height: 0px !important;
+  opacity: 0;
+}
+
+.loading .text-loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  width: 100%;
+  height: 120px;
+  line-height: 120px;
+  color: #f18f5b;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+  text-align: center;
+  user-select: none;
+  animation: text-hide 2s linear infinite;
+  transition: color 0.5s ease-in-out;
+}
+
+.loading .circle-loading {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  border-color: transparent #f18f5b transparent #f18f5b;
+  animation: circle-rotate 1.5s linear infinite;
+  transition: border-color 0.5s ease-in-out;
+}
+
+.loading .text-tip-loading {
+  width: 100%;
+  width: 100%;
+  height: 26px;
+  margin: 0;
+  margin-top: 20px;
+  line-height: 26px;
+  color: #f18f5b;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+  transition: color 0.5s ease-in-out;
+}
+
+@keyframes text-hide {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes circle-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

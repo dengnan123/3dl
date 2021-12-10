@@ -1,0 +1,144 @@
+.empty {
+  :global {
+    .ant-empty-description {
+      color: #fff;
+    }
+  }
+}
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  .bottomDiv {
+    height: 40px;
+    width: 300px;
+    margin: 0;
+    z-index: 500;
+    position: absolute;
+    bottom: 20px;
+    right: 300px;
+    color: #1991eb;
+  }
+
+  /*定义滚动条高宽及背景
+ 高宽分别对应横竖滚动条的尺寸*/
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    background-color: #1a1d21;
+  }
+  /*定义滚动条轨道
+内阴影+圆角*/
+  ::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #1a1d21;
+  }
+  /*定义滑块
+内阴影+圆角*/
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+  }
+}
+
+.normal {
+  display: flex;
+  height: 100%;
+  padding-top: 60px;
+}
+
+.modalDiv {
+  :global {
+    .ant-modal-close {
+      display: none;
+    }
+    .ant-modal-footer {
+      display: none;
+    }
+    .ant-modal-content {
+      height: 100vh;
+      width: 100vw;
+    }
+  }
+}
+
+.listLoading {
+  margin: 20px auto;
+  font-size: 16px;
+  display: flex;
+  background: #fff;
+  img {
+    margin: 0 auto;
+  }
+}
+.showRight {
+  display: block;
+  z-index: 120;
+  transform: translateZ(0);
+  transform-origin: center;
+  transition: transform 0.2s ease, width 0.3s ease-in-out;
+}
+.hiddenRight {
+  width: 0 !important;
+  // opacity: 0;
+  display: none;
+  padding-left: 0;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.2s ease, width 0.3s ease-in-out;
+}
+
+.showLeft {
+  opacity: 1;
+  transform: translateZ(0);
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+.hiddenLeft {
+  width: 0;
+  opacity: 0;
+  padding-right: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+//  Loading
+.loadingContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  > p {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 10;
+    width: 100%;
+    height: 120px;
+    margin: -60px 0 0 0;
+    line-height: 120px;
+    color: #f18f5b;
+    font-size: 22px;
+    font-weight: bold;
+    opacity: 0;
+    text-align: center;
+    user-select: none;
+    animation: textHide 0.5s linear infinite;
+    transition: color 0.5s ease-in-out;
+  }
+}
+
+@keyframes textHide {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

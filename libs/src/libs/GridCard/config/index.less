@@ -1,0 +1,30 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.topType {
+  margin-bottom: 10px;
+  h3 {
+    font-size: 16px;
+    color: #606060;
+    > i {
+      margin-left: 5px;
+      color: #999999;
+      cursor: pointer;
+    }
+  }
+  :global {
+    .ant-radio-wrapper span {
+      color: #999999;
+    }
+  }
+}

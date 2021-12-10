@@ -1,0 +1,114 @@
+.box {
+  width: 100%;
+  padding: 0;
+  // background-color: #ffffff;
+  // border: 1px solid #d9d9d9;
+}
+
+.textDiv {
+  width: 100%;
+  .item {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8;
+    cursor: pointer;
+
+    > p {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.item:hover {
+  p.title {
+    color: #1991eb;
+  }
+  .icon {
+    display: block;
+  }
+  .icon > i {
+    color: #1991eb;
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: none;
+  width: 14px;
+  height: 14px;
+  > i {
+    color: #999999;
+    font-size: 14px;
+  }
+}
+
+.textDiv {
+  :global {
+    .ant-collapse {
+      border: 0px;
+    }
+    .ant-input-number {
+      width: 100%;
+    }
+    .ant-select {
+      width: 100% !important;
+    }
+    .ant-form-item-control {
+      display: flex;
+    }
+  }
+}
+
+/****** Form表单 样式===Start ******/
+.formContent {
+  color: #000;
+  > p {
+    margin: 0 0 10px 0;
+    color: #1991eb;
+    font-size: 14px;
+  }
+  .itemTitle {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #e8e8e8;
+  }
+
+  :global {
+    .ant-form-item {
+      display: flex;
+      justify-content: start;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .ant-form-item-label {
+      width: 65px;
+      line-height: 30px;
+      text-align: left;
+      > label {
+        color: #666666;
+        font-size: 12px;
+        text-align: left;
+      }
+    }
+    .ant-form-item-control {
+      line-height: 30px;
+    }
+    .ant-form-item-control-wrapper {
+      flex:1;
+      .ant-input-number {
+        width: 100%;
+        height: 28px;
+        line-height: 28px;
+      }
+      .ant-input-number-input {
+        height: 28px;
+      }
+    }
+  }
+}

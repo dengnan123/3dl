@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="246px" height="124px" viewBox="0 0 246 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="78.2464208%" id="linearGradient-1">
+            <stop stop-color="#88C9FF" offset="0%"></stop>
+            <stop stop-color="#2C5CE4" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="78.2464208%" id="linearGradient-2">
+            <stop stop-color="#88C9FF" offset="0%"></stop>
+            <stop stop-color="#2C5CE4" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-首页-微软中国智慧办公成果" transform="translate(-107.000000, -785.000000)">
+            <g id="Group" transform="translate(109.000000, 787.000000)">
+                <circle id="椭圆形" stroke="#F7B500" stroke-width="5" fill-opacity="0.996121066" fill="#FFFFFF" cx="121" cy="114" r="5"></circle>
+                <g id="编组-10">
+                    <g id="编组-23">
+                        <rect id="矩形" stroke="url(#linearGradient-1)" x="0.5" y="0.5" width="241" height="59" rx="3"></rect>
+                        <path d="M120.989871,39.7089229 L112.203709,48.2931034 L2,48.2931034 C1.17157288,48.2931034 0.5,48.9646763 0.5,49.7931034 L0.5,105 C0.5,105.828427 1.17157288,106.5 2,106.5 L240,106.5 C240.828427,106.5 241.5,105.828427 241.5,105 L241.5,49.7931034 C241.5,48.9646763 240.828427,48.2931034 240,48.2931034 L129.287912,48.2931034 L120.989871,39.7089229 Z" id="矩形" stroke="url(#linearGradient-2)" transform="translate(121.000000, 73.000000) scale(1, -1) translate(-121.000000, -73.000000) "></path>
+                        <path d="M0,13 L0,5.50610563 C0,2.46516746 2.58445353,0 5.77253852,0 L14,0 M228,0 L235.731182,0 C239.193355,-6.50657169e-15 242,2.45988698 242,5.49431134 L242,13" id="形状" stroke="#82C7FF" stroke-width="3" transform="translate(121.000000, 6.500000) scale(-1, 1) translate(-121.000000, -6.500000) "></path>
+                        <path d="M0,98 L0,90.5061056 C0,87.4651675 2.58445353,85 5.77253852,85 L14,85 M228,85 L235.731182,85 C239.193355,85 242,87.459887 242,90.4943113 L242,98" id="形状" stroke="#82C7FF" stroke-width="3" transform="translate(121.000000, 91.500000) scale(-1, -1) translate(-121.000000, -91.500000) "></path>
+                    </g>
+                    <g id="编组-7" transform="translate(11.000000, 15.000000)">
+                        <g id="编组-20" transform="translate(37.000000, 0.000000)"></g>
+                        <polygon id="Rectangle-4-Copy-2复制-5备份-2" fill="#76C0FD" opacity="0.155780321" transform="translate(109.000000, 49.500000) rotate(90.000000) translate(-109.000000, -49.500000) " points="89 -59 129 -59 129 158 89 158"></polygon>
+                    </g>
+                    <path d="M120.664524,77.7505007 L120.329108,51.2526235" id="直线-6备份" stroke="#FFFFFF" opacity="0.100000001" stroke-linecap="square" transform="translate(120.496816, 64.501562) rotate(180.725224) translate(-120.496816, -64.501562) "></path>
+                </g>
+                <g id="编组" transform="translate(16.000000, 13.000000)" fill="#D8D8D8">
+                    <rect id="矩形" x="0" y="0" width="8" height="8"></rect>
+                    <rect id="矩形" x="0" y="10" width="8" height="8"></rect>
+                    <rect id="矩形" x="10" y="0" width="8" height="8"></rect>
+                    <rect id="矩形" x="10" y="10" width="8" height="8"></rect>
+                    <rect id="矩形" x="0" y="10" width="8" height="8"></rect>
+                    <rect id="矩形" x="10" y="0" width="8" height="8"></rect>
+                    <rect id="矩形" x="10" y="10" width="8" height="8"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

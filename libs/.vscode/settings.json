@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "tslint.enable": false,
+  "javascript.validate.enable": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "html.format.enable": false,
+  "npm.updateStrategy": "SEMVER",
+  "npm.registry": "https://registry.npm.taobao.org",
+  "prettier.disableLanguages": ["vue", "html"]
+}

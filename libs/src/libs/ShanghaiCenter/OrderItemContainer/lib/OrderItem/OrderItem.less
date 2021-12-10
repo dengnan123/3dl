@@ -1,0 +1,139 @@
+.itemContainer {
+  width: 1000px;
+  // width: auto;
+  height: 90px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  .floor {
+    min-width: fit-content;
+    height: 40px;
+    font-family: 'PingFangSC-Regular';
+    // font-size: 28px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    margin-right: 8px;
+    overflow: hidden;
+  }
+  .statusIcon {
+    margin-right: 9px;
+  }
+  .time {
+    min-width: 80px;
+    width: fit-content;
+    // height: 40px;
+    font-family: 'PingFangSC-Medium';
+    // font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    margin-left: 14px;
+    margin-right: 9px;
+  }
+  .serviceName {
+    min-width: fit-content;
+    height: 40px;
+    line-height: 40px;
+    font-weight: normal;
+    font-stretch: normal;
+    // font-size: 28px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    margin-right: 6px;
+    overflow: hidden;
+  }
+  .username {
+    min-width: fit-content;
+    color: #f0f0f0;
+    height: 40px;
+    // font-size: 28px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: 1px;
+    margin-left: 6px;
+    margin-right: 6px;
+    overflow: hidden;
+  }
+  .des {
+    width: auto;
+    overflow: hidden;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: start;
+    height: 40px;
+    font-family: 'PingFangSC-Regular';
+    // font-size: 28px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    flex: 1;
+  }
+  .staffContainer {
+    background-color: rgba(2, 2, 2, 0.3);
+    width: fit-content;
+    height: 60px;
+    border-radius: 14px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    .staffIcon {
+      margin-left: 20px;
+      margin-right: 9px;
+    }
+    .staffName {
+      overflow: hidden;
+      overflow-x: hidden;
+      white-space: nowrap;
+      margin-right: 20px;
+      color: #e6e6e6;
+      // font-size: 24px;
+      font-family: 'PingFangSC-Regular';
+      letter-spacing: 1px;
+      line-height: 28px;
+    }
+  }
+
+  .breatheBorder {
+    // min-width: 1000px;
+    width: 100%;
+    height: 90px;
+    border-radius: 14px;
+    border: solid 2px rgba(61, 210, 163, 1);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-timing-function: ease-in-out;
+    animation-name: breathe;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes breathe {
+    0% {
+      opacity: 0.2;
+      border: solid 2px rgba(61, 210, 163, 0.4);
+      box-shadow: rgba(60, 210, 150, 0.1) 0px 0px 5px 0px, rgba(60, 210, 150, 0.1) 0px 0px 1px 0px;
+    }
+
+    100% {
+      opacity: 1;
+      border: solid 2px rgba(61, 210, 163, 1);
+      box-shadow: rgba(60, 210, 150, 0.1) 0px 0px 5px 0px, rgba(60, 210, 150, 0.1) 0px 0px 1px 0px;
+    }
+  }
+}

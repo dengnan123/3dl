@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="148px" viewBox="0 0 148 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>编组 25</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="54.0769648" cy="54.0769648" r="54.0769648"></circle>
+        <filter x="-29.1%" y="-27.3%" width="158.3%" height="158.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="10" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0379425262 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2备份-3" transform="translate(-136.000000, -160.000000)">
+            <g id="编组-22" transform="translate(-0.056675, 106.000000)">
+                <g id="编组-25" transform="translate(155.631451, 72.019513)">
+                    <g id="椭圆形" opacity="0.449999988">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use stroke="#BFBFBF" stroke-width="1" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <path d="M54.0767973,55.8215397 C62.8436641,55.8215397 69.9492941,48.7159097 69.9492941,39.9494615 C69.9492941,31.1825947 62.8436641,24.0769648 54.0767973,24.0769648 C45.3102654,24.0769648 38.2046354,31.1825947 38.2046354,39.9494615 C38.2046354,48.7159097 45.3102654,55.8215397 54.0767973,55.8215397 Z M54.0767973,63.2287104 C39.4637063,63.2287104 27.6163854,67.8967323 27.6163854,73.6495309 C27.6163854,79.4023294 39.4637063,84.0769648 54.0767973,84.0769648 C68.690307,84.0769648 80.5375442,79.409194 80.5375442,73.6560606 C80.5375442,67.9033458 68.690307,63.2287104 54.0767973,63.2287104 Z" id="Fill-1备份" fill="#FFFFFF" opacity="0.414713542"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

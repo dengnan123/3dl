@@ -1,0 +1,19 @@
+@import './default.less';
+
+:global {
+  .dm-select-default {
+    &.ant-select,
+    &.ant-select-open,
+    &.ant-select-focused {
+      .ant-select-selection {
+        border: none;
+        background-color: unset;
+        box-shadow: none;
+      }
+    }
+    &.ant-select-selection {
+      border: none;
+      background-color: unset;
+    }
+  }
+}

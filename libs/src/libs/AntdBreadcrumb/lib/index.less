@@ -1,0 +1,43 @@
+.icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.container {
+  :global {
+    .ant-breadcrumb-link {
+      position: relative;
+    }
+
+    .ant-breadcrumb {
+      > span {
+        &:not(:last-child) {
+          .ant-breadcrumb-link {
+            cursor: pointer;
+
+            &:hover {
+              span {
+                color: #1991eb !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  div,
+  span {
+    display: inline-block;
+    line-height: inherit;
+    vertical-align: middle;
+  }
+}

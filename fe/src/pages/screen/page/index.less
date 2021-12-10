@@ -1,0 +1,163 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+
+  .top {
+    margin-bottom: 30px;
+
+    .search {
+      width: 400px;
+      margin-right: 30px;
+    }
+
+    .add {
+      position: relative;
+      float: right;
+      padding-left: 34px;
+
+      .plus {
+        position: absolute;
+        left: 15px;
+        top: -4px;
+        font-size: 24px;
+      }
+    }
+
+    .selectBox {
+      margin-top: 10px;
+
+      :global {
+        .ant-select {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .desc {
+    display: flex;
+    margin-bottom: 10px;
+
+    .total {
+      width: 100%;
+      line-height: 24px;
+      font-size: 14px;
+      span {
+        color: #1991eb;
+      }
+    }
+
+    .switch {
+      margin-bottom: 0;
+    }
+  }
+
+  .tableImg {
+    height: 60px;
+  }
+
+  .card {
+    cursor: default;
+    :global {
+      .ant-card-cover {
+        width: 100%;
+        overflow: hidden;
+        padding: 10px;
+
+        :local {
+          .corverImg {
+            position: relative;
+            padding-top: 50%;
+            cursor: pointer;
+            overflow: hidden;
+
+            .view {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              transition: all 0.3s;
+
+              &::after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4);
+                transition: all 0.3s;
+                opacity: 0;
+              }
+            }
+
+            &:hover {
+              .view {
+                &::after {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .ant-card-body {
+        position: relative;
+        padding: 0 12px 12px 12px;
+
+        p {
+          margin-bottom: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+
+    .title {
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: 500;
+      font-size: 16px;
+      color: #424242;
+    }
+
+    .operateBtn {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      opacity: 0;
+      display: flex;
+      justify-content: space-evenly;
+      transition: all 0.2s linear;
+
+      button {
+        width: 90px;
+        color: #fff;
+        transition: all 0.3s ease;
+        padding: 0;
+
+        &:hover {
+          &:not(:disabled) {
+            color: #c3cfe8;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .operateBtn {
+        opacity: 1;
+      }
+    }
+  }
+}

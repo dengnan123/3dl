@@ -1,0 +1,1 @@
+export default {floor: 5, showErr: false}

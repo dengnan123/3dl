@@ -1,0 +1,31 @@
+.customize-mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // width: 100vw;
+  // height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.customize-mask.show {
+  display: block;
+}
+
+.customize-body {
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+  opacity: 0;
+  transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.close-icon {
+  position: absolute;
+  z-index: 11;
+  text-align: center;
+  color: #cccccc;
+  cursor: pointer;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="979px" height="743px" viewBox="0 0 979 743" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>左上区</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="78.2464208%" id="linearGradient-1">
+            <stop stop-color="#C4CEE6" stop-opacity="0.46" offset="0%"></stop>
+            <stop stop-color="#2C5CE4" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="78.2464208%" id="linearGradient-2">
+            <stop stop-color="#C4CEE6" stop-opacity="0.46" offset="0%"></stop>
+            <stop stop-color="#2C5CE4" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页E-Copy" transform="translate(-57.000000, -186.000000)">
+            <g id="左上区" transform="translate(60.000000, 189.000000)">
+                <g id="底框">
+                    <g id="编组-22" transform="translate(486.500000, 368.500000) rotate(90.000000) translate(-486.500000, -368.500000) translate(118.000000, -118.000000)">
+                        <path d="M107.5,331.5 L1056.5,331.5 C1063.12742,331.5 1068.5,336.872583 1068.5,343.5 L1068.5,629.5 C1068.5,636.127417 1063.12742,641.5 1056.5,641.5 L107.5,641.5 C100.872583,641.5 95.5,636.127417 95.5,629.5 L95.5,343.5 C95.5,336.872583 100.872583,331.5 107.5,331.5 Z" id="Rectangle-4-Copy-2复制-5" stroke="url(#linearGradient-1)" stroke-width="2" fill-opacity="0.02" fill="#0066CC" transform="translate(582.000000, 486.500000) rotate(90.000000) translate(-582.000000, -486.500000) "></path>
+                        <path d="M-260.5,272.5 L688.5,272.5 C695.679702,272.5 701.5,278.320298 701.5,285.5 L701.5,687.5 C701.5,694.679702 695.679702,700.5 688.5,700.5 L-260.5,700.5 C-267.679702,700.5 -273.5,694.679702 -273.5,687.5 L-273.5,285.5 C-273.5,278.320298 -267.679702,272.5 -260.5,272.5 Z" id="Rectangle-4-Copy-2复制-5" stroke="url(#linearGradient-2)" stroke-width="2" fill-opacity="0.02" fill="#0066CC" transform="translate(214.000000, 486.500000) scale(-1, 1) rotate(90.000000) translate(-214.000000, -486.500000) "></path>
+                        <path d="M-472.869096,500.072508 L-472.869096,484.391008 C-472.869096,478.027632 -467.496513,472.869096 -460.869096,472.869096 L-443.765782,472.869096 M473.331594,472.869096 L488.130904,472.869096 C494.758321,472.869096 500.130904,478.027632 500.130904,484.391008 L500.130904,500.130904" id="形状" stroke="#7182A8" stroke-width="6" transform="translate(13.630904, 486.500000) scale(-1, 1) rotate(90.000000) translate(-13.630904, -486.500000) "></path>
+                        <path d="M236.869096,500.072508 L236.869096,484.391008 C236.869096,478.027632 242.241679,472.869096 248.869096,472.869096 L248.869096,472.869096 L265.97241,472.869096 M1183.06979,472.869096 L1197.8691,472.869096 C1204.49651,472.869096 1209.8691,478.027632 1209.8691,484.391008 L1209.8691,500.130904" id="形状复制" stroke="#7182A8" stroke-width="6" transform="translate(723.369096, 486.500000) rotate(90.000000) translate(-723.369096, -486.500000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,7 @@
+[auth]
+token=YOUR API TOKEN
+
+[defaults]
+url=服务器
+org=组织
+project=项目

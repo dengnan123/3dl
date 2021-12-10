@@ -1,0 +1,53 @@
+.contanier {
+  position: relative;
+  :global {
+    .ant-input {
+      font-size: 20px !important;
+    }
+    .ant-select-lg .ant-select-selection--single {
+      height: 100%;
+    }
+    .ant-select-lg .ant-select-selection__rendered {
+      line-height: 48px;
+    }
+  }
+  .list {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: 9999999;
+    height: auto;
+    background: #fff;
+    ul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999999999;
+      max-height: 160px;
+      margin: 0;
+      padding-left: 0;
+      overflow: scroll;
+      list-style: none;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 5px;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        height: 40px;
+        padding: 0 30px;
+        color: #333;
+        font-size: 16px;
+        line-height: 40px;
+        list-style: none;
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+  }
+}

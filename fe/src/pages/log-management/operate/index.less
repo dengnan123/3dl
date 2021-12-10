@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+
+  .top {
+    margin-bottom: 10px;
+
+    .datePicker {
+      margin-right: 5px;
+    }
+
+    .search {
+      width: 400px;
+      float: right;
+    }
+
+    .selectBox {
+      margin-top: 10px;
+      display: inline-block;
+
+      :global {
+        .ant-select {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .desc {
+    display: flex;
+    margin-bottom: 10px;
+
+    .total {
+      width: 100%;
+      line-height: 24px;
+      font-size: 14px;
+      span {
+        color: #1991eb;
+      }
+    }
+  }
+
+  .tableImg {
+    height: 60px;
+  }
+}
+
+.drawer {
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
